@@ -1,0 +1,125 @@
+[gd_scene load_steps=24 format=3 uid="uid://nrgoync2d32v"]
+
+[ext_resource type="Script" uid="uid://dd7fugu5i281w" path="res://Scripts/player.gd" id="1_0l4p2"]
+[ext_resource type="Texture2D" uid="uid://c2deqasnrjbbi" path="res://Assets/Player/slime-attack-0.png" id="2_giuu3"]
+[ext_resource type="Texture2D" uid="uid://5h1bq36dncnp" path="res://Assets/Player/slime-attack-1.png" id="3_bxcs6"]
+[ext_resource type="Texture2D" uid="uid://kdpoy3xioh2q" path="res://Assets/Player/slime-attack-2.png" id="4_gsloi"]
+[ext_resource type="Texture2D" uid="uid://gwv4f755q7xa" path="res://Assets/Player/slime-attack-3.png" id="5_tkw7m"]
+[ext_resource type="Texture2D" uid="uid://biungif1g0iy6" path="res://Assets/Player/slime-attack-4.png" id="6_1tbob"]
+[ext_resource type="Texture2D" uid="uid://db2mjva8q1duw" path="res://Assets/Player/slime-die-0.png" id="7_tltph"]
+[ext_resource type="Texture2D" uid="uid://bb2h1fcn2psxh" path="res://Assets/Player/slime-die-1.png" id="8_xjj8q"]
+[ext_resource type="Texture2D" uid="uid://cy6nf6na5nfo1" path="res://Assets/Player/slime-die-2.png" id="9_xuafd"]
+[ext_resource type="Texture2D" uid="uid://clx245kuw57vu" path="res://Assets/Player/slime-die-3.png" id="10_3jkpd"]
+[ext_resource type="Texture2D" uid="uid://c87v2tk4icfqv" path="res://Assets/Player/slime-hurt-0.png" id="11_sbh1q"]
+[ext_resource type="Texture2D" uid="uid://duotd0t1or0o5" path="res://Assets/Player/slime-hurt-1.png" id="12_pymhh"]
+[ext_resource type="Texture2D" uid="uid://drvx766mtssek" path="res://Assets/Player/slime-hurt-2.png" id="13_6xpci"]
+[ext_resource type="Texture2D" uid="uid://dg1m8e40mtwhl" path="res://Assets/Player/slime-hurt-3.png" id="14_m74yl"]
+[ext_resource type="Texture2D" uid="uid://ifwiptcg5apu" path="res://Assets/Player/slime-idle-0.png" id="15_biyfg"]
+[ext_resource type="Texture2D" uid="uid://bmll22dgq2b0p" path="res://Assets/Player/slime-idle-1.png" id="16_jpt73"]
+[ext_resource type="Texture2D" uid="uid://bstlqx113decs" path="res://Assets/Player/slime-idle-2.png" id="17_fst7k"]
+[ext_resource type="Texture2D" uid="uid://bu65jiqp2qs5n" path="res://Assets/Player/slime-idle-3.png" id="18_8bkho"]
+[ext_resource type="Texture2D" uid="uid://hnphd6dfr30c" path="res://Assets/Player/slime-move-0.png" id="19_y3mtw"]
+[ext_resource type="Texture2D" uid="uid://cui45y6hkt40e" path="res://Assets/Player/slime-move-1.png" id="20_w7pyf"]
+[ext_resource type="Texture2D" uid="uid://ch16rw8fhanpy" path="res://Assets/Player/slime-move-2.png" id="21_t1nhv"]
+[ext_resource type="Texture2D" uid="uid://dhev1yik54ftv" path="res://Assets/Player/slime-move-3.png" id="22_ielrj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_linyt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_giuu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bxcs6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gsloi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tkw7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1tbob")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tltph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xjj8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xuafd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3jkpd")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_sbh1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pymhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6xpci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m74yl")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_biyfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jpt73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fst7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8bkho")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_y3mtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w7pyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_t1nhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ielrj")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_0l4p2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_linyt")
+animation = &"idle"
+frame_progress = 0.83874
