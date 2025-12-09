@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://nrgoync2d32v"]
+[gd_scene load_steps=24 format=3 uid="uid://nrgoync2d32v"]
 
 [ext_resource type="Script" uid="uid://dd7fugu5i281w" path="res://Scripts/player.gd" id="1_0l4p2"]
 [ext_resource type="Texture2D" uid="uid://c2deqasnrjbbi" path="res://Assets/Player/slime-attack-0.png" id="2_giuu3"]
@@ -22,9 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://cui45y6hkt40e" path="res://Assets/Player/slime-move-1.png" id="20_w7pyf"]
 [ext_resource type="Texture2D" uid="uid://ch16rw8fhanpy" path="res://Assets/Player/slime-move-2.png" id="21_t1nhv"]
 [ext_resource type="Texture2D" uid="uid://dhev1yik54ftv" path="res://Assets/Player/slime-move-3.png" id="22_ielrj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l4p2"]
-size = Vector2(20, 8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_linyt"]
 animations = [{
@@ -121,13 +118,8 @@ animations = [{
 script = ExtResource("1_0l4p2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0l4p2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -7)
-scale = Vector2(1, 0.98)
 sprite_frames = SubResource("SpriteFrames_linyt")
-animation = &"move"
-frame_progress = 0.872408
-
-[node name="Camera2D" type="Camera2D" parent="."]
+animation = &"idle"
+frame_progress = 0.1869
